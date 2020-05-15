@@ -27,7 +27,7 @@ get "/goodmorning" do
   time = Time.new
   time_h = plus_zero(time.hour.to_s)
   time_m = plus_zero(time.min.to_s)
-  if time_h == "07" && time_h == "08" && time_h == "09" then
+  if time_h == "07" or time_h == "08" or time_h == "09" then
     client.update("ねるねるは起床に成功しました(#{time_h}:#{time_m})")
   else
     client.update("ねるねるは起床に失敗しました(#{time_h}:#{time_m})")
